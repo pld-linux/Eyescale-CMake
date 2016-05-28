@@ -1,0 +1,11 @@
+--- Eyescale-CMake-2016.04/common/Common.cmake~	2016-04-05 11:42:04.000000000 +0000
++++ Eyescale-CMake-2016.04/common/Common.cmake	2016-05-28 16:40:47.577436434 +0000
+@@ -72,7 +72,7 @@
+     add_definitions(-fPIC)
+   endif()
+ endif()
+-set(LIBRARY_DIR lib)
++set(LIBRARY_DIR lib${LIB_SUFFIX})
+ 
+ if(APPLE)
+   cmake_policy(SET CMP0042 NEW)

@@ -8,6 +8,7 @@ License:	BSD
 Group:		Development/Tools
 Source0:	https://github.com/Eyescale/CMake/archive/%{gitref}/Eyescale-CMake-%{gitref}.tar.gz
 # Source0-md5:	b121851bcee76d6e99abdacf54a4512c
+Patch0:		libdir.patch
 URL:		https://github.com/Eyescale/CMake/
 Requires:	cmake >= 2.8
 BuildArch:	noarch
@@ -23,7 +24,9 @@ Collage czy Equalizer).
 
 %prep
 %setup -q -c
+
 %{__mv} CMake-* common
+%patch0 -p1
 
 %{__rm} common/.gitignore
 %{__mv} common/{CHANGES.md,LICENSE.txt,README.md} .
