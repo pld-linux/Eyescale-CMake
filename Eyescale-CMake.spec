@@ -1,15 +1,13 @@
 Summary:	CMake common macros for Eyescale projects
 Summary(pl.UTF-8):	Wspólne makra CMake dla projektów Eyescale
 Name:		Eyescale-CMake
-Version:	0
-%define	snap	20141214
-%define	gitref	217fc77e74fa316bcaea12dc0df2919c08ce2231
-Release:	0.%{snap}.1
+Version:	2016.04
+%define	gitref	0e519bfbbf74bb30a17c75d5c4c4d0266f5d272b
+Release:	1
 License:	BSD
 Group:		Development/Tools
 Source0:	https://github.com/Eyescale/CMake/archive/%{gitref}/Eyescale-CMake-%{gitref}.tar.gz
-# Source0-md5:	6a8afcf8f1f96dad07ae9e163a1b6786
-Patch0:		Eyescale-cmake.patch
+# Source0-md5:	b121851bcee76d6e99abdacf54a4512c
 URL:		https://github.com/Eyescale/CMake/
 Requires:	cmake >= 2.8
 BuildArch:	noarch
@@ -26,7 +24,6 @@ Collage czy Equalizer).
 %prep
 %setup -q -c
 %{__mv} CMake-* common
-%patch0 -p1
 
 %{__rm} common/.gitignore
 %{__mv} common/{CHANGES.md,LICENSE.txt,README.md} .
