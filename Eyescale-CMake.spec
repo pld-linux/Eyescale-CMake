@@ -2,7 +2,7 @@ Summary:	CMake common macros for Eyescale projects
 Summary(pl.UTF-8):	Wspólne makra CMake dla projektów Eyescale
 Name:		Eyescale-CMake
 Version:	2016.12
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Tools
 Source0:	https://github.com/Eyescale/CMake/archive/%{version}/%{name}-%{version}.tar.gz
@@ -27,10 +27,10 @@ Collage czy Equalizer).
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake/common
+install -d $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake
 
-cp -a * $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake/common
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake/common/{CHANGES.md,LICENSE.txt,README.md}
+cp -a * $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake/{CHANGES.md,LICENSE.txt,README.md}
 
 %clean
 rm -rf $RPM_BUILD_ROOT

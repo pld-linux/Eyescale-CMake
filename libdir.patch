@@ -20,3 +20,26 @@
    endif()
    if(CMAKE_OSX_DEPLOYMENT_TARGET)
      set(COMMON_OSX_TARGET_VERSION ${CMAKE_OSX_DEPLOYMENT_TARGET})
+--- CMake-2016.12/CommonLibrary.cmake~	2016-12-05 15:54:16.000000000 +0100
++++ CMake-2016.12/CommonLibrary.cmake	2017-04-14 16:00:11.264391317 +0200
+@@ -158,16 +158,16 @@
+       # CommonPackageConfig.cmake
+       if(${NAME}_OMIT_EXPORT)
+         install(TARGETS ${LibName}
+-          ARCHIVE DESTINATION lib COMPONENT dev
++          ARCHIVE DESTINATION lib${LIB_SUFFIX} COMPONENT dev
+           RUNTIME DESTINATION bin COMPONENT lib
+-          LIBRARY DESTINATION lib COMPONENT lib
++          LIBRARY DESTINATION lib${LIB_SUFFIX} COMPONENT lib
+           INCLUDES DESTINATION include)
+       else()
+         install(TARGETS ${LibName}
+           EXPORT ${PROJECT_NAME}Targets
+-          ARCHIVE DESTINATION lib COMPONENT dev
++          ARCHIVE DESTINATION lib${LIB_SUFFIX} COMPONENT dev
+           RUNTIME DESTINATION bin COMPONENT lib
+-          LIBRARY DESTINATION lib COMPONENT lib
++          LIBRARY DESTINATION lib${LIB_SUFFIX} COMPONENT lib
+           INCLUDES DESTINATION include)
+       endif()
+     endif()
