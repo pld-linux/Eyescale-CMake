@@ -1,13 +1,12 @@
 Summary:	CMake common macros for Eyescale projects
 Summary(pl.UTF-8):	Wspólne makra CMake dla projektów Eyescale
 Name:		Eyescale-CMake
-Version:	2016.04
-%define	gitref	0e519bfbbf74bb30a17c75d5c4c4d0266f5d272b
+Version:	2016.12
 Release:	1
 License:	BSD
 Group:		Development/Tools
-Source0:	https://github.com/Eyescale/CMake/archive/%{gitref}/Eyescale-CMake-%{gitref}.tar.gz
-# Source0-md5:	b121851bcee76d6e99abdacf54a4512c
+Source0:	https://github.com/Eyescale/CMake/archive/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	29bbcd13dc912ed0c8fbfe474f050f2c
 Patch0:		libdir.patch
 URL:		https://github.com/Eyescale/CMake/
 Requires:	cmake >= 2.8
@@ -23,19 +22,15 @@ Wspólne makra CMake dla projektów Eyescale (takich jak Lunchbox,
 Collage czy Equalizer).
 
 %prep
-%setup -q -c
-
-%{__mv} CMake-* common
+%setup -q -n CMake-%{version}
 %patch0 -p1
-
-%{__rm} common/.gitignore
-%{__mv} common/{CHANGES.md,LICENSE.txt,README.md} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}
+install -d $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake/common
 
-cp -a common $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake
+cp -a * $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake/common
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/Eyescale-CMake/common/{CHANGES.md,LICENSE.txt,README.md}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
