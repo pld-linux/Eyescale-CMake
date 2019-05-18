@@ -1,12 +1,13 @@
 Summary:	CMake common macros for Eyescale projects
 Summary(pl.UTF-8):	Wspólne makra CMake dla projektów Eyescale
 Name:		Eyescale-CMake
-Version:	2016.12
-Release:	2
+Version:	2018.02
+Release:	1
 License:	BSD
 Group:		Development/Tools
+#Source0Download: https://github.com/Eyescale/CMake/releases
 Source0:	https://github.com/Eyescale/CMake/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	29bbcd13dc912ed0c8fbfe474f050f2c
+# Source0-md5:	3c20d5ad6dbbe95ca1119ad36ae5f8e1
 Patch0:		libdir.patch
 URL:		https://github.com/Eyescale/CMake/
 Requires:	cmake >= 2.8
