@@ -10,6 +10,7 @@ Source0:	https://github.com/Eyescale/CMake/archive/%{version}/%{name}-%{version}
 # Source0-md5:	3c20d5ad6dbbe95ca1119ad36ae5f8e1
 Patch0:		libdir.patch
 URL:		https://github.com/Eyescale/CMake/
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	sed >= 4.0
 Requires:	cmake >= 2.8
 BuildArch:	noarch
