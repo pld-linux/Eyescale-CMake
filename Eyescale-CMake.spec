@@ -26,7 +26,7 @@ Collage czy Equalizer).
 
 %prep
 %setup -q -n CMake-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 # python2 script (uses e.g. dict iteritems(), itervalues() methods)
 %{__sed} -i -e '1s,/usr/bin/python$,%{__python},' util/cpplint.py
